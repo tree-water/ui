@@ -1,0 +1,22 @@
+from PySide6.QtWidgets import QApplication, QMainWindow, QGraphicsScene, QGraphicsView
+import sys
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Main Window")
+
+class GraphicsLayoutWindow(QGraphicsView):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("Graphics Layout Window")
+        self.scene = QGraphicsScene()
+        self.setScene(self.scene)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    main_window = MainWindow()
+    graphics_layout_window = GraphicsLayoutWindow()
+    main_window.show()
+    graphics_layout_window.show()
+    sys.exit(app.exec())
